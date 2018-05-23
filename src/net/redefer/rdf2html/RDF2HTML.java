@@ -30,22 +30,23 @@ public class RDF2HTML{
 	 */
 	private String transformation = "/home/tung/Data/rdf2html.xsl"; // Default transformation to apply
 	private String input;
-	
+	private String fileNameOutput;
+		
+	public RDF2HTML(String input, String fileNameOutput) {
+		this.input = input;
+		this.fileNameOutput = fileNameOutput;
+	}
 	
 	public String getInput() {
 		return input;
 	}
 
-
-	public void setInput(String input) {
-		this.input = input;
+	public String getFileNameOutput() {
+		return fileNameOutput;
 	}
 
-	public RDF2HTML(String input) {
-		this.input = input;
-	}
-	public void performTask(String input) throws IOException{
-		PrintWriter out = new PrintWriter(new File("/home/tung/Data/result.html"));
+	public void performTask() throws IOException{
+		PrintWriter out = new PrintWriter(new File(fileNameOutput));
 		try {
 
 			String language = "en";
