@@ -56,9 +56,10 @@ public class Test {
 				"\n" + 
 				"</rdf:RDF>\n" + 
 				"";
-		RDF2HTML rdfConvert = new RDF2HTML(input);
+		String fileNameOutput = "/home/tung/Data/result.html";
+		RDF2HTML rdfConvert = new RDF2HTML(input, fileNameOutput);
 		try {
-			rdfConvert.performTask(input);
+			rdfConvert.performTask();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
